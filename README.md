@@ -1,149 +1,91 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# AnyaFinanças 💜 | Agente Inteligente de Saúde Financeira
 
-## Contexto
+![Anya Header](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![Streamlit](https://img.shields.io/badge/Framework-Streamlit-FF4B4B)
+![Gemini](https://img.shields.io/badge/LLM-Google%20Gemini-4285F4)
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> **Projeto desenvolvido para o Bootcamp Bradesco - GenAI & Dados na DIO.**
+> 
+> A **AnyaFinanças** não é apenas um chatbot; é uma Analista de Saúde Financeira que utiliza Inteligência Artificial Generativa para transformar a relação de jovens e clientes de varejo com suas dívidas, focando especialmente na erradicação do uso predatório do crédito rotativo.
 
 ---
 
-## O Que Você Deve Entregar
+## 🚀 Visão Geral
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+No cenário bancário atual, o endividamento por falta de educação financeira é um desafio crítico. A Anya resolve isso através de:
+- **Análise Preditiva de Gastos:** Identifica gargalos (como excesso de delivery) antes do fechamento da fatura.
+- **Consultoria de Crédito Saudável:** Sugere a troca de dívidas de juros altos (rotativo) por opções mais baratas do catálogo do banco.
+- **Persona Empática:** Comunicação acessível e acolhedora, garantindo uma experiência de usuário (UX) superior e humanizada.
 
 ---
 
-### 2. Base de Conhecimento
+## 🛠️ Stack Tecnológica
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+- **Linguagem:** [Python](https://www.python.org/)
+- **Interface:** [Streamlit](https://streamlit.io/)
+- **Processamento de Dados:** [Pandas](https://pandas.pydata.org/)
+- **Cérebro (LLM):** [Google Gemini AI](https://ai.google.dev/)
+- **Arquitetura:** RAG (Retrieval-Augmented Generation) simplificado para evitar alucinações.
 
 ---
 
-### 3. Prompts do Agente
+## 🏗️ Arquitetura do Projeto
 
-Documente os prompts que definem o comportamento do seu agente:
+A Anya utiliza uma técnica de injeção de contexto dinâmico. O sistema lê dados locais de transações, gera um resumo estatístico e injeta esse conhecimento no prompt do LLM junto com as diretrizes de segurança e personalidade.
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
+```mermaid
+flowchart TD
+    A[Usuário] -->|Interação Natural| B(Interface Streamlit)
+    B --> C{Backend Python}
+    C -->|Lê Dados| D[(CSV/JSON - Base de Conhecimento)]
+    D -->|Resumo via Pandas| C
+    C -->|Prompt Contextualizado| E[LLM - Google Gemini]
+    E -->|Resposta Segura e Empática| B
+    B --> F[Plano de Saúde Financeira]
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
+📁 Estrutura do Repositório
 
----
+📁 data/                # Bases de conhecimento (Transações, Produtos, Histórico)
+📁 docs/                # Documentação detalhada em 5 etapas (Metodologia DIO)
+📁 src/                 # Código-fonte da aplicação (app.py)
+📄 requirements.txt     # Dependências do projeto
+📄 README.md            # Guia principal do projeto
 
-## Dicas Finais
+⚙️ Como Executar
+1. Clone o repositório:
+    git clone https://github.com/EndryusSchmidel/Anya-finances.git
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+2. Instale as dependências:
+    code
+    Bash
+    pip install -r requirements.txt
+
+3. Obtenha uma API Key:
+Gere sua chave gratuita no Google AI Studio.
+
+4. Inicie a Anya:
+streamlit run src/app.py
+
+📊 Avaliação e Resultados
+O agente foi submetido a testes de Compliance e Grounding, apresentando:
+* 100% de Assertividade em cálculos baseados nos arquivos CSV.
+* Zero Alucinações em produtos financeiros fora do catálogo JSON.
+* Alta taxa de engajamento devido ao tom de voz empático e didático.
+
+🎥 Demonstração e Pitch
+Confira a Anya em ação e a explicação técnica completa da solução no link abaixo:
+[🔗 Assista ao Pitch da AnyaFinanças no Google Drive](https://www.google.com/url?sa=E&q=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1kltR8-a222uEk7_iFY8h1TtSLcyiMVJv%2Fview%3Fusp%3Dsharing)
+
+## 👨‍💻 Autor e Contato
+
+**Endryus Schmidel** - *Software Engineer Intern / ADS Student*
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/endryus-schmidel">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:endryus.dev@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</p>
